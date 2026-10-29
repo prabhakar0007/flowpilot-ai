@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090d1b">
+  <title>FlowPilot AI</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="shell">
+    <aside>
+      <div class="brand">✦ FlowPilot <b>AI</b></div>
+      <p class="muted">YOUR WORKSPACE</p>
+      <button data-page="dashboard" class="active">◫ Dashboard</button>
+      <button data-page="assistant">✧ AI Assistant</button>
+      <button data-page="invoices">▤ Invoices</button>
+      <button data-page="history">◷ Chat history</button>
+    </aside>
+
+    <main>
+      <header>
+        <div>
+          <p class="muted">YOUR WORK, IN FLOW</p>
+          <h1 id="title">Dashboard</h1>
+        </div>
+        <span class="pill">● No payments enabled</span>
+      </header>
+
+      <section id="dashboard" class="page">
+        <div class="hero">
+          <p>YOUR AI WORKSPACE</p>
+          <h2>Make room for <span>good work.</span></h2>
+          <p>AI ideas, client invoices and conversations — in one calm workspace.</p>
+          <button data-goto="assistant">Ask FlowPilot ↗</button>
+        </div>
+        <div class="stats">
+          <article>
+            <p>Total invoices</p>
+            <strong id="invoiceCount">0</strong>
+          </article>
+          <article>
+            <p>Invoice value</p>
+            <strong id="invoiceValue">₹0.00</strong>
+          </article>
+          <article>
+            <p>AI conversations</p>
+            <strong id="chatCount">0</strong>
+          </article>
+          <article>
+            <p>Paid invoices</p>
+            <strong id="paidCount">0</strong>
+          </article>
+        </div>
+        <div class="panel">
+          <h3>Recent invoices</h3>
+          <div id="recent">No invoices yet.</div>
+        </div>
+      </section>
+
+      <section id="assistant" class="page hidden">
+        <div class="intro">
+          <p class="muted">YOUR THINKING PARTNER</p>
+          <h2>What can we <span>work through?</span></h2>
+          <p>Brainstorm, write, plan and organize your next step.</p>
+        </div>
+        <div class="panel chat">
+          <div id="messages" class="messages">
+            <div class="bubble ai">Hi! I'm FlowPilot AI. Ask me to help plan a workflow, draft an email or brainstorm an idea.</div>
+          </div>
+          <form id="chatForm">
+            <textarea id="prompt" placeholder="Ask FlowPilot anything…" required></textarea>
+            <button>Send ↑</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="invoices" class="page hidden">
+        <div class="row">
+          <div>
+            <p class="muted">CLIENT WORK, ORGANIZED</p>
+            <h2>Invoices</h2>
+            <p class="muted">Create and track invoice records. No payments are processed.</p>
+          </div>
+          <button id="showInvoice">＋ New invoice</button>
+        </div>
+        <div id="invoiceFormWrap" class="panel hidden">
+          <form id="invoiceForm">
+            <div class="fields">
+              <input id="client" placeholder="Client name" required>
+              <input id="clientEmail" type="email" placeholder="Client email">
+              <input id="description" placeholder="Description" required>
+              <input id="amount" type="number" min="0" step="0.01" placeholder="Amount (INR)" required>
+              <input id="dueDate" type="date">
+              <select id="status">
+                <option>Draft</option>
+                <option>Sent</option>
+                <option>Paid</option>
+                <option>Overdue</option>
+              </select>
+            </div>
+            <button>Save invoice</button>
+          </form>
+        </div>
+        <div id="invoiceList" class="panel">No invoices yet. Click New invoice.</div>
+      </section>
+
+      <section id="history" class="page hidden">
+        <div class="row">
+          <div>
+            <p class="muted">YOUR IDEAS, KEPT CLOSE</p>
+            <h2>Chat history</h2>
+          </div>
+          <button id="refresh">↻ Refresh</button>
+        </div>
+        <div id="historyList" class="stack panel">No saved conversations yet.</div>
+      </section>
+
+      <footer>
+        ✦ FlowPilot AI <span>Secure Gemini backend · Direct access workspace · No payment processing</span>
+      </footer>
+    </main>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
