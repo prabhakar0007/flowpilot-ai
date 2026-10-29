@@ -1,5 +1,7 @@
 # FlowPilot AI (No Payments)
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/prabhakar0007/flowpilot-ai)
+
 A calm, focused business operations workspace for freelancers and small businesses. Includes AI assistance, invoice generation & tracking, private browser-persisted history, and real-time dashboard metrics.
 
 **Live Demo Ready**: No database setup required. Opens directly without login.
